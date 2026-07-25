@@ -69,11 +69,20 @@
         <!-- Left Side: Overview & Features -->
         <div>
           <h2 style="font-size: 1.6rem; color: var(--text-primary); margin-bottom: 1rem; border-left: 4px solid var(--accent-teal); padding-left: 0.75rem;">Overview & Impact</h2>
-          <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem; font-size: 0.95rem;">Built an internal corporate Employee Management System (EMS) using AI prompt workflows. Successfully integrated physical biometric scanners with database event tables, and established automated roster schedules and payroll pipelines.</p>
+          <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem; font-size: 0.95rem;">
+            This Custom Employee Management System (EMS) was architected as an internal SaaS tool using AI-assisted programming pipelines. The platform solves critical operational bottlenecks by establishing an automated bridge between physical office hardware and corporate database event logs.
+          </p>
+          <p style="color: var(--text-secondary); line-height: 1.7; margin-bottom: 2rem; font-size: 0.95rem;">
+            By integrating device listener hooks with automated worker pools, employee attendance logs are parsed in real-time, feeding directly into a live tracking dashboard for managers. This is coupled with a automated payroll engine that computes hourly wages, overtime multipliers, and leave deductions instantly.
+          </p>
           
           <h2 style="font-size: 1.6rem; color: var(--text-primary); margin-bottom: 1.2rem; border-left: 4px solid var(--accent-teal); padding-left: 0.75rem;">Key Scope & Features</h2>
           <ul style="padding-left: 1.25rem; color: var(--text-secondary); line-height: 1.8; font-size: 0.95rem;">
-            <li style='margin-bottom: 0.5rem;'>Biometric device synchronization with live logging streams.</li><li style='margin-bottom: 0.5rem;'>Employee roster calendars and task tracking logs.</li><li style='margin-bottom: 0.5rem;'>Salary calculation engines with automated deduction logic.</li>
+            <li style='margin-bottom: 0.5rem;'><strong>Real-time Biometric Integration:</strong> Listens to remote TCP/IP fingerprint and card readers, writing check-in timestamps to SQLite/PostgreSQL log databases.</li>
+            <li style='margin-bottom: 0.5rem;'><strong>Visual Roster Calendars:</strong> Color-coded shift schedules and attendance grids mapping employee latency, leaves, and shift states.</li>
+            <li style='margin-bottom: 0.5rem;'><strong>Automated Payroll Ledger:</strong> Automatically computes net monthly salary balances after leaves, late clock-ins, and performance point parameters.</li>
+            <li style='margin-bottom: 0.5rem;'><strong>Administrative Controls:</strong> Actionable popups allowing managers to adjust shifts, edit timecards, and log leaves.</li>
+            <li style='margin-bottom: 0.5rem;'><strong>Clean Security & Credentials:</strong> Role-based access levels keeping payroll records and settings restricted to administrative accounts.</li>
           </ul>
         </div>
 
@@ -81,12 +90,12 @@
         <div class="glass-card" style="padding: 2rem; background: rgba(10, 14, 26, 0.7); height: fit-content;">
           <div style="margin-bottom: 1.5rem;">
             <span style="display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">My Role</span>
-            <span style="font-size: 1.05rem; font-weight: 600; color: var(--accent-teal);">SEO Expert & WordPress Developer</span>
+            <span style="font-size: 1.05rem; font-weight: 600; color: var(--accent-teal);">AI Full-Stack Developer & Systems Architect</span>
           </div>
 
           <div style="margin-bottom: 1.5rem;">
             <span style="display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px;">Technologies</span>
-            <span style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.5; display: block;">HTML5, CSS3, JavaScript, Node.js event database, biometric API hooks</span>
+            <span style="font-size: 0.95rem; color: var(--text-secondary); line-height: 1.5; display: block;">Node.js Event Listeners, WebSockets, PHP, SQLite/PostgreSQL, HTML5, CSS3, Tailwind CSS</span>
           </div>
 
           <div>
@@ -95,6 +104,59 @@
           </div>
         </div>
 
+      </div>
+
+      <!-- Platform Showcase Gallery -->
+      <div style="margin-top: 4rem; border-top: 1px solid var(--border-color); padding-top: 3rem;">
+        <h2 style="font-size: 1.8rem; color: var(--text-primary); margin-bottom: 2.5rem; border-left: 4px solid var(--accent-teal); padding-left: 0.75rem;">Platform Interface & Screens</h2>
+        
+        <div style="display: grid; grid-template-columns: 1fr; gap: 3.5rem;">
+          
+          <!-- Screen 1: Attendance Calendar -->
+          <div class="glass-card" style="padding: 2rem; background: rgba(10, 14, 26, 0.5); border-radius: 12px; border-color: rgba(255, 255, 255, 0.05);">
+            <h3 style="font-size: 1.3rem; color: var(--text-primary); margin-bottom: 0.75rem; font-weight: 700;">
+              <i class="fa-solid fa-calendar-days" style="color: var(--accent-teal); margin-right: 0.5rem;"></i> 1. Attendance & Shift Calendar
+            </h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
+              Provides managers and employees with a color-coded calendar interface. Displays check-in/out flags, shifts status, leave deductions, and latency alerts in real-time.
+            </p>
+            <img src="assets/ems_calendar.png" alt="Employee Attendance & Shift Calendar View" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
+          </div>
+          
+          <!-- Screen 2: Biometric Sync Stream -->
+          <div class="glass-card" style="padding: 2rem; background: rgba(10, 14, 26, 0.5); border-radius: 12px; border-color: rgba(255, 255, 255, 0.05);">
+            <h3 style="font-size: 1.3rem; color: var(--text-primary); margin-bottom: 0.75rem; font-weight: 700;">
+              <i class="fa-solid fa-fingerprint" style="color: var(--accent-teal); margin-right: 0.5rem;"></i> 2. Live Biometric Event Stream
+            </h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
+              Monitors the incoming hardware events from physical fingerprint and card biometric devices. Displays sync status, latency delays, active connection logs, and parses worker IDs dynamically.
+            </p>
+            <img src="assets/ems_biometric.png" alt="Live Biometric Log Stream View" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
+          </div>
+          
+          <!-- Screen 3: Payroll Calculations -->
+          <div class="glass-card" style="padding: 2rem; background: rgba(10, 14, 26, 0.5); border-radius: 12px; border-color: rgba(255, 255, 255, 0.05);">
+            <h3 style="font-size: 1.3rem; color: var(--text-primary); margin-bottom: 0.75rem; font-weight: 700;">
+              <i class="fa-solid fa-wallet" style="color: var(--accent-teal); margin-right: 0.5rem;"></i> 3. Payroll Calculation Ledger
+            </h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
+              Calculates monthly salaries based on computed attendance rates, late punch-ins, overtime parameters, and tax models. Facilitates one-click payslip generation.
+            </p>
+            <img src="assets/ems_payroll.png" alt="Automated Payroll Ledger View" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
+          </div>
+
+          <!-- Screen 4: Operational Modals -->
+          <div class="glass-card" style="padding: 2rem; background: rgba(10, 14, 26, 0.5); border-radius: 12px; border-color: rgba(255, 255, 255, 0.05);">
+            <h3 style="font-size: 1.3rem; color: var(--text-primary); margin-bottom: 0.75rem; font-weight: 700;">
+              <i class="fa-solid fa-window-maximize" style="color: var(--accent-teal); margin-right: 0.5rem;"></i> 4. Interactive Action Modals
+            </h3>
+            <p style="color: var(--text-secondary); font-size: 0.95rem; line-height: 1.6; margin-bottom: 1.5rem;">
+              Allows administrators to perform roster adjustments, override biometric records, edit work points, and approve leaves on the fly.
+            </p>
+            <img src="assets/ems_modal.png" alt="Interactive Admin Modal View" style="width: 100%; border-radius: 8px; border: 1px solid rgba(255, 255, 255, 0.08);">
+          </div>
+          
+        </div>
       </div>
 
     </div>
