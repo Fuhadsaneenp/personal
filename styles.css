@@ -543,7 +543,7 @@ header .container {
    ========================================================================== */
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
   gap: 5rem;
   align-items: start;
 }
@@ -590,10 +590,15 @@ header .container {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+  min-width: 0;
+  width: 100%;
 }
 
 .skills-category {
-  padding: 1.8rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .skills-category h3 {
@@ -1529,6 +1534,7 @@ footer {
   overflow: hidden;
   position: relative;
   width: 100%;
+  max-width: 100%;
   padding: 0.5rem 0;
   margin-top: 1rem;
 }
