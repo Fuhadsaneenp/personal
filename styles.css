@@ -1521,3 +1521,77 @@ footer {
     font-size: 1.35rem;
   }
 }
+
+/* ==========================================================================
+   INFINITE SKILLS MARQUEE
+   ========================================================================== */
+.skills-marquee-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding: 0.8rem 0;
+  margin-top: 1rem;
+  mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+}
+
+.skills-marquee-track {
+  display: flex;
+  width: max-content;
+  gap: 1rem;
+}
+
+/* Scroll Animations */
+.marquee-left {
+  animation: scroll-left 30s linear infinite;
+}
+
+.marquee-right {
+  animation: scroll-right 30s linear infinite;
+}
+
+/* Pause on Hover */
+.skills-marquee-container:hover .skills-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Marquee Item Styles */
+.skills-marquee-item {
+  flex-shrink: 0;
+  width: 110px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+  transition: border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
+}
+
+.skills-marquee-item:hover {
+  border-color: rgba(62, 180, 137, 0.3);
+  background: rgba(62, 180, 137, 0.04);
+  transform: translateY(-2px);
+}
