@@ -1331,150 +1331,193 @@ footer {
 }
 
 /* ==========================================================================
-   EXPERIENCE / TRACK SYSTEM
+   INTERACTIVE CAREER SHOWCASE
    ========================================================================== */
-.experience-track {
-  position: relative;
-  padding: 1rem 0;
+.experience-showcase {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  background: rgba(10, 14, 26, 0.6);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
 }
 
-.experience-item {
-  position: relative;
-  padding-left: 3rem;
-  margin-bottom: 3.5rem;
-}
-
-.experience-item:last-child {
-  margin-bottom: 0;
-}
-
-.experience-line {
-  position: absolute;
-  top: 2.2rem;
-  left: 15px;
-  bottom: -3.5rem;
-  width: 2px;
-  background: linear-gradient(to bottom, var(--accent-teal), rgba(255, 255, 255, 0.03));
-  z-index: 1;
-}
-
-.experience-item:last-child .experience-line {
-  display: none;
-}
-
-.experience-dot {
-  position: absolute;
-  top: 2.2rem;
-  left: 7px;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: var(--bg-darker);
-  border: 4px solid var(--accent-teal);
-  box-shadow: 0 0 10px rgba(62, 180, 137, 0.2);
-  z-index: 2;
-  transition: all var(--transition-normal);
-}
-
-.experience-item:hover .experience-dot {
-  background: var(--accent-teal);
-  box-shadow: 0 0 15px var(--accent-teal);
-  transform: scale(1.15);
-}
-
-.experience-content {
-  padding: 2.5rem;
-  background: rgba(10, 14, 26, 0.65);
-  border-color: rgba(255, 255, 255, 0.05);
-  transition: transform var(--transition-normal), border-color var(--transition-normal);
-}
-
-.experience-item:hover .experience-content {
-  transform: translateY(-4px);
-  border-color: rgba(62, 180, 137, 0.2);
-}
-
-.experience-header {
+.experience-tabs {
+  background: rgba(10, 14, 26, 0.3);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  padding-bottom: 1.5rem;
-  margin-bottom: 1.5rem;
+  flex-direction: column;
+  padding: 1.5rem 0;
 }
 
-.experience-role {
-  font-size: 1.35rem;
+.tab-btn {
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-align: left;
+  padding: 1.2rem 1.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.tab-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: transparent;
+  transition: all var(--transition-fast);
+}
+
+.tab-btn:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.tab-btn.active {
+  color: var(--accent-teal);
+  background: rgba(62, 180, 137, 0.04);
+}
+
+.tab-btn.active .tab-dot {
+  background: var(--accent-teal);
+  box-shadow: 0 0 8px var(--accent-teal);
+}
+
+/* Active Border Slider Left */
+.tab-btn::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 3px;
+  height: 100%;
+  background: transparent;
+  transition: all var(--transition-fast);
+}
+
+.tab-btn.active::after {
+  background: var(--accent-teal);
+}
+
+.experience-panels {
+  padding: 3rem;
+  position: relative;
+  min-height: 480px;
+}
+
+.tab-panel {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.tab-panel.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.panel-header {
+  margin-bottom: 2rem;
+}
+
+.panel-role {
+  font-size: 1.6rem;
   font-weight: 800;
   color: var(--text-primary);
-  margin: 0;
-  line-height: 1.3;
+  margin: 0 0 0.5rem 0;
 }
 
-.experience-company {
+.panel-company-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.panel-company {
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--accent-teal);
-  margin: 0.35rem 0 0 0;
 }
 
-.experience-date {
-  font-size: 0.85rem;
-  font-weight: 700;
+.panel-date {
+  font-size: 0.9rem;
+  font-weight: 600;
   color: var(--text-muted);
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: rgba(255, 255, 255, 0.03);
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  white-space: nowrap;
 }
 
-.experience-details {
+.panel-achievements {
   list-style-type: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 1.2rem;
 }
 
-.experience-details li {
+.panel-achievements li {
   font-size: 0.95rem;
   color: var(--text-secondary);
   line-height: 1.6;
-  position: relative;
-  padding-left: 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
 }
 
-.experience-details li::before {
-  content: '•';
-  position: absolute;
-  left: 0;
+.panel-achievements li i {
   color: var(--accent-teal);
-  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
 }
 
-/* Responsive Experience Track */
+.panel-achievements li strong {
+  color: var(--text-primary);
+}
+
+/* Responsive showcase */
 @media (max-width: 768px) {
-  .experience-item {
-    padding-left: 2rem;
+  .experience-showcase {
+    grid-template-columns: 1fr;
   }
-  .experience-line {
-    left: 8px;
+  .experience-tabs {
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 0;
+    scrollbar-width: none; /* Hide scrollbar Firefox */
   }
-  .experience-dot {
+  .experience-tabs::-webkit-scrollbar {
+    display: none; /* Hide scrollbar Chrome/Safari */
+  }
+  .tab-btn {
+    padding: 1rem 1.5rem;
+    flex-shrink: 0;
+    text-align: center;
+    justify-content: center;
+  }
+  .tab-btn::after {
+    bottom: 0;
+    top: auto;
     left: 0;
+    width: 100%;
+    height: 3px;
   }
-  .experience-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.75rem;
+  .experience-panels {
+    padding: 2rem 1.5rem;
+    min-height: auto;
   }
-  .experience-content {
-    padding: 1.5rem;
+  .panel-role {
+    font-size: 1.35rem;
   }
 }

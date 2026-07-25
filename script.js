@@ -256,4 +256,31 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  /* ==========================================================================
+     INTERACTIVE EXPERIENCE TABS
+     ========================================================================== */
+  const expTabs = document.getElementById('expTabs');
+  if (expTabs) {
+    const tabButtons = expTabs.querySelectorAll('.tab-btn');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Deactivate all buttons
+        tabButtons.forEach(b => b.classList.remove('active'));
+        // Deactivate all panels
+        tabPanels.forEach(p => p.classList.remove('active'));
+
+        // Activate current button
+        btn.classList.add('active');
+        // Activate target panel
+        const targetId = btn.getAttribute('data-target');
+        const targetPanel = document.getElementById(targetId);
+        if (targetPanel) {
+          targetPanel.classList.add('active');
+        }
+      });
+    });
+  }
 });
