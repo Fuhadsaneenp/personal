@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
      TYPEWRITER EFFECT (Hero)
      ========================================================================== */
   const typewriterElement = document.getElementById('typewriter');
-  const words = ['SEO Optimization', 'Search Dominance', 'Organic Traffic', 'AI-Assisted WordPress'];
+  const words = ['Specialist', 'Optimizations', 'Strategies', 'WordPress Builds', 'AI Integrations'];
   let wordIndex = 0;
   let charIndex = 0;
   let isDeleting = false;
