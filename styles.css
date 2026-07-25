@@ -1529,26 +1529,25 @@ footer {
   overflow: hidden;
   position: relative;
   width: 100%;
-  padding: 0.8rem 0;
+  padding: 0.5rem 0;
   margin-top: 1rem;
-  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
 }
 
 .skills-marquee-track {
   display: flex;
   flex-wrap: nowrap;
+  align-items: center; /* Prevent vertical stretching! */
   width: max-content;
   gap: 1rem;
 }
 
 /* Scroll Animations */
 .marquee-left {
-  animation: scroll-left 30s linear infinite;
+  animation: scroll-left 25s linear infinite;
 }
 
 .marquee-right {
-  animation: scroll-right 30s linear infinite;
+  animation: scroll-right 25s linear infinite;
 }
 
 /* Pause on Hover */
@@ -1577,16 +1576,17 @@ footer {
 /* Marquee Item Styles */
 .skills-marquee-item {
   flex-shrink: 0;
-  width: 110px;
+  width: 120px;
+  height: 75px; /* Fixed height to keep cards uniform and compact */
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  padding: 0.8rem;
+  padding: 0.6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   text-align: center;
   transition: border-color var(--transition-fast), background var(--transition-fast), transform var(--transition-fast);
 }
