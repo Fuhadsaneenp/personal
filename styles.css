@@ -67,6 +67,8 @@ body {
   line-height: 1.6;
   background: var(--bg-darker);
   position: relative;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* Custom Scrollbar */
@@ -559,7 +561,7 @@ header .container {
 
 .about-stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
   gap: 1.5rem;
   margin-top: 2.5rem;
 }
@@ -598,6 +600,7 @@ header .container {
   padding: 2rem;
   width: 100%;
   max-width: 100%;
+  min-width: 0;
   overflow: hidden;
 }
 
@@ -649,6 +652,7 @@ header .container {
 .project-filters {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 0.8rem;
   margin-bottom: 3.5rem;
 }
@@ -1206,12 +1210,12 @@ footer {
   }
   
   .about-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 3rem;
   }
   
   .contact-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
     gap: 3rem;
   }
 }
@@ -1332,6 +1336,51 @@ footer {
     flex-direction: column;
     gap: 1.5rem;
     text-align: center;
+  }
+
+  /* Mobile container padding adjustment */
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  /* Projects Grid layout safety */
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+
+  /* Scale down hero visual glow ring to prevent overflows */
+  .hero-visual::before {
+    width: 280px;
+    height: 280px;
+  }
+
+  /* Override skills unified widget card inline padding on mobile */
+  .skills-category[style] {
+    padding: 1.25rem !important;
+  }
+
+  /* Global responsive fixes for project detail pages (grids & titles) */
+  main.section-padding > .container > div[style*="grid-template-columns"] {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 2rem !important;
+  }
+  
+  main.section-padding h1[style*="font-size"] {
+    font-size: 2.2rem !important;
+  }
+
+  /* Responsive typography controls */
+  .hero-title {
+    font-size: 2.4rem;
+    line-height: 1.2;
+  }
+
+  .desktop-br {
+    display: none;
+  }
+
+  .about-text {
+    font-size: 1rem;
   }
 }
 
@@ -1535,6 +1584,7 @@ footer {
   position: relative;
   width: 100%;
   max-width: 100%;
+  min-width: 0;
   padding: 0.5rem 0;
   margin-top: 1rem;
 }
@@ -1601,4 +1651,49 @@ footer {
   border-color: rgba(62, 180, 137, 0.3);
   background: rgba(62, 180, 137, 0.04);
   transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   MOBILE & NARROW DEVICES OVERRIDES (600px and 480px)
+   ========================================================================== */
+@media (max-width: 600px) {
+  .about-stats {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 280px;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .contact-form-wrapper {
+    padding: 1.5rem;
+  }
+  
+  main.section-padding h1[style*="font-size"] {
+    font-size: 1.75rem !important;
+  }
+
+  .hero-title {
+    font-size: 1.8rem;
+  }
+
+  .section-title {
+    font-size: 1.6rem !important;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+  }
 }

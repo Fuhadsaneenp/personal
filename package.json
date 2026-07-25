@@ -4,7 +4,7 @@
   "description": "Personal Portfolio for Fuhad Saneen",
   "main": "index.html",
   "scripts": {
-    "start": "npx -y http-server -p 8000"
+    "start": "npx -y http-server -p 8081 -c-1"
   },
   "keywords": [
     "portfolio",
