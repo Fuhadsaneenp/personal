@@ -143,9 +143,9 @@ document.addEventListener('DOMContentLoaded', () => {
         card.offsetHeight; // Trigger reflow to restart CSS animations
         card.style.animation = '';
 
-        const cardCategory = card.getAttribute('data-category');
+        const cardCategories = card.getAttribute('data-category').split(',');
 
-        if (filterValue === 'all' || cardCategory === filterValue) {
+        if (filterValue === 'all' || cardCategories.includes(filterValue)) {
           card.style.display = 'block';
         } else {
           card.style.display = 'none';
