@@ -1397,6 +1397,7 @@ footer {
 
   /* Horizontal scrolling for project filters on mobile */
   .project-filters {
+    flex-wrap: nowrap !important;
     justify-content: flex-start;
     overflow-x: auto;
     padding: 0.5rem 1.25rem;
