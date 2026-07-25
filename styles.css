@@ -1531,12 +1531,13 @@ footer {
   width: 100%;
   padding: 0.8rem 0;
   margin-top: 1rem;
-  mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, #000 15%, #000 85%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 6%, #000 94%, transparent);
 }
 
 .skills-marquee-track {
   display: flex;
+  flex-wrap: nowrap;
   width: max-content;
   gap: 1rem;
 }
