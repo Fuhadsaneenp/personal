@@ -1,0 +1,17 @@
+{
+  "name": "fuhadsaneen-portfolio",
+  "version": "1.0.0",
+  "description": "Personal Portfolio for Fuhad Saneen PK",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx -y http-server -p 8000"
+  },
+  "keywords": [
+    "portfolio",
+    "static",
+    "wordpress",
+    "seo"
+  ],
+  "author": "Fuhad Saneen PK",
+  "license": "ISC"
+}
