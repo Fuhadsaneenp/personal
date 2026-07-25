@@ -1382,6 +1382,38 @@ footer {
   .about-text {
     font-size: 1rem;
   }
+
+  /* Footer Navigation Responsiveness */
+  .footer-nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem 1.5rem;
+    padding: 0;
+  }
+  
+  .footer-nav a {
+    white-space: nowrap;
+  }
+
+  /* Horizontal scrolling for project filters on mobile */
+  .project-filters {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding: 0.5rem 1.25rem;
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    margin-bottom: 2.5rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .project-filters::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .filter-btn {
+    flex-shrink: 0;
+  }
 }
 
 /* ==========================================================================
